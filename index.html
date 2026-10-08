@@ -5,195 +5,377 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Homepage</title>
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-* {
-	margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-	background:  linear-gradient(120deg, blue, #7b2cff, #ff4fc3, #ff8bd8, #7b2cff, blue);
-	overflow: hidden;
-	position: relative;
-}
-body: before {
-	
-	position: absolute;
-	width: 500px;
-	height: 500px;
-	background: rgba(255, 255, 255, 0.12);
-	border-radius: 50%;
-	left: -180px;
-	bottom: -200px;
-}
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-body::after {
-    
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    right: -100px;
-    top: -100px;
-}
-.container {
-    width: 90%;
-    max-width: 850px;
-    text-align: center;
-    z-index: 2;
-}
-.welcome-card {
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(10px);
-	padding: 40px 30px;
-    border-radius: 4px;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-	margin-bottom: 30px;
-}
-.welcome-card h1 {
-    color: #333;
-    font-size: 30px;
-    margin-bottom: 25px;
-}
-.welcome-card p {
-    color: #666;
-    line-height: 1.8;
-    font-size: 15px;
-    max-width: 700px;
-    margin: auto;
-}
-.logout-btn {
-	
-    display: inline-flex;
-    align-items: top;
-    gap: 8px;
-	margin-top: 20px;
-    padding: 12px 28px;
-	border: none;
-    cursor: pointer;
-	background: #7b2cff;
-    color: white;
-	font-weight: bold;
-	border-radius: 3px;
-	transition: 0.3s;
-}
-.logout-btn:hover {
-	background:	#7b2cff;
-    transform: translateY(-2px);
-}
-.navigation {
-    display: flex;
-    justify-content: flex-end;
-	align-items: center;
-    flex-wrap: wrap;
-	flex-direction: row;
-    gap: 12px;
-	position: absolute;
-	top: 20px;
-	right: 20px;
-}
-.nav-btn {
-    text-decoration: none;
-	background: rgba(255, 255, 255, 0.9);
-    color: #666;
-	padding: 12px 25px;
-    min-width: 110px;
-	border-radius: 4px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-	transition: 0.3s;
-}
-.nav-btn i {
-    margin-right: 7px;
-}
-.nav-btn:hover {
-    background: white;
-    color: blue;
-	transform: translateY(-3px);
-	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-}
-@media (max-width: 600px) {
-.welcome-card {
-    padding: 30px 20px;
-}
+            background: linear-gradient(
+                120deg,
+                blue,
+                #7b2cff,
+                #ff4fc3,
+                #ff8bd8,
+                #7b2cff,
+                blue
+            );
 
-.welcome-card h1 {
-    font-size: 24px;
-}
-.navigation {
-    flex-direction: column;
-    align-items: right;
-}
-.nav-btn {
-    idth: 200px;
-    }
-}
-.shop-btn {
-	display: inline-block;
-	background: #176b3a;
-	color: white;
-	text-decoration: none;
-	paddding: 14px 30px;
-	border-radius:6px;
-	font-weight:bold;
-	margin-top: 15px;
-	transition: 0.3s;
-}
-.shop-btn:hover {
-	background: #176b3a;
-	transform: translateY(-2px);
-}
-	</style>
+            position: relative;
+            overflow-x: hidden;
+            padding: 100px 20px 40px;
+        }
+
+        /* Background circles */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            left: -180px;
+            bottom: -200px;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 255, 255, 0.10);
+            border-radius: 50%;
+            right: -100px;
+            top: -100px;
+        }
+
+        /* Main container */
+        .container {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            z-index: 10;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.92);
+            color: #666;
+
+            padding: 12px 20px;
+            min-width: 100px;
+
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .nav-btn i {
+            margin-right: 7px;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: blue;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Logout button - TOP LEFT */
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+            padding: 12px 20px;
+
+            border: none;
+            cursor: pointer;
+
+            background: #d90429;
+            color: white;
+
+            font-weight: bold;
+            border-radius: 6px;
+
+            transition: 0.3s;
+            z-index: 20;
+        }
+
+        .logout-btn:hover {
+            background: #a70320;
+            transform: translateY(-2px);
+        }
+
+        /* Welcome card */
+        .welcome-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+
+            padding: 45px 30px;
+            border-radius: 12px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+            margin: 0 auto;
+        }
+
+        .welcome-card h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 16px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* Shop Now button */
+        .shop-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            background: #176b3a;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 14px 30px;
+            border-radius: 6px;
+
+            font-weight: bold;
+            margin-top: 25px;
+
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: #0f4f2a;
+            transform: translateY(-2px);
+        }
+
+        /* Tablet */
+        @media (max-width: 800px) {
+
+            body {
+                padding-top: 150px;
+            }
+
+            .navigation {
+                top: 75px;
+                left: 20px;
+                right: 20px;
+
+                justify-content: center;
+            }
+
+            .nav-btn {
+                min-width: 90px;
+                padding: 10px 15px;
+            }
+
+            .welcome-card h1 {
+                font-size: 28px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            body {
+                min-height: 100vh;
+                padding: 150px 15px 30px;
+            }
+
+            /* Logout */
+            .logout-btn {
+                top: 15px;
+                left: 15px;
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+
+            /* Navigation */
+            .navigation {
+                top: 65px;
+                left: 15px;
+                right: 15px;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .nav-btn {
+                width: 100%;
+                min-width: 0;
+
+                padding: 10px 8px;
+                font-size: 13px;
+            }
+
+            .nav-btn i {
+                margin-right: 4px;
+            }
+
+            /* Card */
+            .welcome-card {
+                width: 100%;
+                padding: 35px 20px;
+                border-radius: 10px;
+            }
+
+            .welcome-card h1 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            .welcome-card p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            /* Shop button */
+            .shop-btn {
+                width: 100%;
+                padding: 13px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 380px) {
+
+            body {
+                padding-top: 145px;
+            }
+
+            .navigation {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nav-btn {
+                font-size: 12px;
+                padding: 9px 5px;
+            }
+
+            .welcome-card {
+                padding: 30px 15px;
+            }
+
+            .welcome-card h1 {
+                font-size: 21px;
+            }
+
+            .logout-btn {
+                font-size: 12px;
+                padding: 9px 12px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-<div class="welcome-card">
-<h1>Welcome to my Shop!</h1>
-<p>
-Hello! My name is <strong>RJ</strong>,
-Welcome to my website
-</p>
-<a href="Product.html" class="shop-btn">
-	SHOP NOW!
-</a>
-<button class="logout-btn" onclick="logout()">
-<i class="fa-solid fa-right-from-bracket"></i>
-LOGOUT
-</button>
-</div>
-<div class="navigation">
-<a href="index.html" class="nav-btn">
-<i class="fa-solid fa-house"></i>
-Home
-</a>
-<a href="Product.html" class="nav-btn">
-<i class="fa-solid fa-briefcase"></i>
-Product
-</a>
-<a href="Contact.html" class="nav-btn">
-<i class="fa-solid fa-envelope"></i>
-Contact
-<a href="About Us.html" class="nav-btn">
-<i class="fa-solid fa-circle-info"></i>
-About
-</a>
-</div>
-</div>
-<script>
-function logout() {
-alert("You have been logged out!");
-window.location.href = "log in form.html";
-}
-</script>
+    <!-- LOGOUT - TOP LEFT -->
+    <button class="logout-btn" onclick="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        LOGOUT
+    </button>
+
+    <!-- NAVIGATION - TOP RIGHT -->
+    <div class="navigation">
+
+        <a href="index.html" class="nav-btn">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="Product.html" class="nav-btn">
+            <i class="fa-solid fa-briefcase"></i>
+            Product
+        </a>
+
+        <a href="Contact.html" class="nav-btn">
+            <i class="fa-solid fa-envelope"></i>
+            Contact
+        </a>
+
+        <a href="About Us.html" class="nav-btn">
+            <i class="fa-solid fa-circle-info"></i>
+            About
+        </a>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <div class="welcome-card">
+
+            <h1>Welcome to my Shop!</h1>
+
+            <p>
+                Hello! My name is <strong>RJ</strong>.<br>
+                Welcome to my website!
+            </p>
+
+            <!-- SHOP NOW -->
+            <a href="Product.html" class="shop-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                SHOP NOW!
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+        function logout() {
+            alert("You have been logged out!");
+            window.location.href = "log in form.html";
+        }
+    </script>
+
 </body>
 </html>
