@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>About Us - Badminton</title>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f2f7ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #0b3d91;
+    color: white;
+}
+
+.about-section h1 {
+    font-size: 40px;
+}
+
+.about-section p {
+    font-size: 17px;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.column {
+    width: 30%;
+}
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.container {
+    padding: 16px;
+    text-align: center;
+}
+
+.container h2 {
+    color: #0b3d91;
+}
+
+.title {
+    color: #777;
+    font-weight: bold;
+}
+
+
+.button {
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: #0b3d91;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #06265c;
+}
+
+@media screen and (max-width: 650px) {
+    .row {
+        display: block;
+    }
+.column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+.about-section {
+        padding: 30px;
+    }
+}
+.navigation {
+	margin: 20px;
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+.nav-btn {
+	text-decoration: none;
+	background: rgba(255, 255, 255, 0.9);
+	color: #666;
+	padding: 12px 25px;
+	min-width: 110px;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+	transition: 0.3s;
+}
+.nav-btn i {
+	margin-right: 7px;
+}
+.nav-btn:hover {
+	background: white;
+	color: #163b7a;
+	transform: translateY(-3px);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navigation">
+<a href="Homepage.html" class="nav-btn">
+<i class="fa-solid fa-house"></i>
+Back to Home
+</a>
+</div>
+
+<!-- About Us -->
+<div class="about-section">
+
+    <h1> About Us??</h1>
+
+    <p>
+        Welcome to our Badminton Store!
+    </p>
+
+    <p>
+        We provide quality badminton products for beginners,
+        students, and badminton players.
+    </p>
+
+    <p>
+        Our goal is to help players enjoy the game with
+        comfortable, reliable, and affordable equipment.
+    </p>
+
+</div>
+
+
+<h2>Our Badminton Team</h2>
+
+<div class="row">
+    <!-- Member 1 -->
+    <div class="column">
+<div class="card">
+<img src="lee.jpg" alt="Badminton Player">
+<div class="container">
+<h2>Lee</h2>
+<p class="title">
+Badminton Player
+</p>
+<p>
+Passionate about badminton and
+improving skills through training.
+</p>
+<p>
+Player@sample.com
+</p>
+<button class="button"
+onclick="contact('RJ')">
+Contact
+</button>
+</div>
+</div>
+    </div>
+    <!-- Member 2 -->
+    <div class="column">
+<div class="card">
+<img src="tau.jpg" alt="Badminton Player">
+<div class="container">
+<h2>Taufik</h2>
+<p class="title">
+Badminton Coach
+</p>
+<p>
+Helps players improve their
+techniques and badminton skills.
+</p>
+<p>
+coach@sample.com
+</p>
+<button class="button"
+onclick="contact('Patrick')">
+Contact
+</button>
+</div>
+</div>
+    </div>
+    <!-- Member 3 -->
+<div class="column">
+<div class="card">
+<img src="saa.jpg" alt="Badminton Player">
+<div class="container">
+<h2>Neri</h2>
+<p class="title">
+Badminton Team Member
+</p>
+<p>
+Enjoys playing badminton and
+supporting the badminton community.
+</p>
+<p>
+Team@sample.com
+</p>
+<button class="button"
+onclick="contact('John')">
+Contact
+</button>
+</div>
+</div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

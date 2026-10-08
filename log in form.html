@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log In Form</title>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background: linear-gradient(120deg, blue, #7b2cff, #ff4fc3, #ff8bd8, #7b2cff, blue);
+	object-fit: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: 200% 200%;
+	animation: gradientMove 12s ease infinite;
+}
+@keyframes gradientMove {
+0%{
+	background-position: 0% 50%;
+}
+25% {
+	background-position: 50% 100%;
+}
+50% {
+	background-position: 100% 50%;
+}
+100% {
+	background-position: 50% 0%;
+}
+}
+
+.circle {
+	position: absolute;
+	border-radius: 50%;
+	filter: blur(5px);
+	opoacity: 0.35;
+	animation: float 8s ease-in-out infinite;
+}
+.circle1 {
+	width: 250px;
+	height: 250px;
+	background: #0066ff;
+	top: -80px;
+	left: -70px;
+}
+.circle2 {
+	width: 300px;
+	height: 300px;
+	background: #ff4fc3;
+	bottom: -100px;
+	right: -80px;
+	animation-delay: 2s;
+}
+.circle3 {
+	width: 180px;
+	height: 180px;
+	background: #ff4fc3;
+	top: 35%;
+	right: 10%;
+	animation-delay: 4s;
+}
+
+@keyframes float {
+	0%, 100%{
+	transform: translate(0, 0) scale(1);
+}
+50% {
+	transform: translate(40px,-40px)scale(1.15);
+}
+}
+
+.login-container {
+
+    position: relative;
+    z-index: 2;
+
+    width: 430px;
+    padding: 45px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    transition: 0.4s;
+}
+
+.login-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
+}
+
+.login-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    font-size: 35px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+h2 {
+    color: white;
+    font-size: 36px;
+    margin: 10px 0;
+    text-shadow:   0 3px 8px rgba(0,0,0,0.35);
+}
+
+.subtitle {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.login-button {
+
+	background: linear-gradient(135deg, #1600ff, #692cff );
+	color: white;
+    padding: 14px 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 150px;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.login-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(135deg, #3725ff, #a02cff);
+    box-shadow:  0 12px 25px rgba(0,0,0,0.4);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.55);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background: rgba(255,255,255,0.95);
+    margin: 3% auto;
+    border: none;
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.imgcontainer {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient( 135deg, #7b2cff, #ff4fc3);
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+.container {
+    padding: 25px;
+}
+
+.container label {
+    font-size: 16px;
+    color: #333;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 13px 15px;
+    margin: 8px 0 18px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    border: 2px solid #7b2cff;
+    box-shadow: 0 0 10px rgba(123,44,255,0.3);
+}
+
+.container button[type=submit] {
+    background: linear-gradient( 135deg, #1600ff, #7b2cff);
+    color: white;
+    padding: 13px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.container button[type=submit]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cancelbtn:hover {
+    opacity: 0.8;
+}
+
+span.psw {
+    float: right;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+span.psw a {
+    color: #5b21b6;
+}
+
+.bottom-container {
+    background-color: #f1f1f1;
+    padding: 18px 25px;
+    overflow: hidden;
+}
+
+.animate {
+    animation: animatezoom 0.5s;
+}
+
+@keyframes animatezoom {
+
+    from {  transform: scale(0);
+    }
+
+    to {  transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 500px) {
+.login-container {
+    width: 90%;
+    padding: 35px 25px;
+}
+
+h2 {
+    ont-size: 30px;
+}
+
+.modal-content {
+    width: 90%;
+}
+
+}
+</style>
+</head>
+<body>
+
+	<div class="circle circle1"></div>
+	<div class="circle circle2"></div>
+	<div class="circle circle3"></div>
+
+<div class="login-container">
+
+    <h2>Log In Diri!!</h2>
+
+    <p class="subtitle">
+    Welcome! Please login to continue.
+    </p>
+
+<button
+    class="login-button"
+    onclick="document.getElementById('id01').style.display='block'">
+    Login
+</button>
+
+</div>
+
+<div id="id01" class="modal">
+
+    <form
+    class="modal-content animate"
+    onsubmit="return validateForm()">
+<div class="imgcontainer">
+<span
+    onclick="document.getElementById('id01').style.display='none'"
+    class="close">
+    &times;
+</span>
+
+<img
+    src="shrek.gif"
+    alt="Login Image"
+    class="img">
+</div>
+  
+ <div class="container">
+    <label for="username">
+    <b>Username</b>
+    </label>
+<input
+    type="text"
+    id="username"
+	placeholder="Enter Your Username" 
+	name="uname" required>
+    <label for="password">
+    <b>Password</b>
+</label>
+<input
+    type="password"
+    id="password"
+    placeholder="Enter Your Password"  name="psw" required>
+<button type="submit">
+ Login
+</button>
+<label>
+<input
+	type="checkbox"
+    checked="checked"
+    name="remember">
+	Remember me
+</label>
+ </div>
+    
+ <div class="bottom-container">
+
+<button
+	type="button"
+	onclick="document.getElementById('id01').style.display='none'"
+	class="cancelbtn">
+	Cancel
+</button>
+	<span class="psw">
+    Forgot <a href="#">password?</a>
+   </span>
+   </div>
+</form>
+</div>
+</div>
+
+
+<script>
+
+function validateForm() {
+
+var username =
+    document.getElementById("username").value;
+
+    var password =
+    document.getElementById("password").value;
+    var validUsername = "admin";
+
+    var validPassword = "1234";
+
+
+if (
+    username === validUsername &&
+    password === validPassword
+    ) {
+    window.location.href = "Homepage.html";
+return false;
+}
+
+ else {
+	alert("Invalid Username or password");
+	return false;
+
+}
+}
+
+window.onclick = function(event) {
+var modal =
+   document.getElementById('id01');
+
+if (event.target == modal) {
+   modal.style.display = "none";
+
+}
+}
+</script>
+
+</body>
+</html>

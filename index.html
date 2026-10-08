@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Homepage</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	background:  linear-gradient(120deg, blue, #7b2cff, #ff4fc3, #ff8bd8, #7b2cff, blue);
+	overflow: hidden;
+	position: relative;
+}
+body: before {
+	
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 50%;
+	left: -180px;
+	bottom: -200px;
+}
+
+body::after {
+    
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    right: -100px;
+    top: -100px;
+}
+.container {
+    width: 90%;
+    max-width: 850px;
+    text-align: center;
+    z-index: 2;
+}
+.welcome-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+	padding: 40px 30px;
+    border-radius: 4px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+	margin-bottom: 30px;
+}
+.welcome-card h1 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.welcome-card p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 15px;
+    max-width: 700px;
+    margin: auto;
+}
+.logout-btn {
+	
+    display: inline-flex;
+    align-items: top;
+    gap: 8px;
+	margin-top: 20px;
+    padding: 12px 28px;
+	border: none;
+    cursor: pointer;
+	background: #7b2cff;
+    color: white;
+	font-weight: bold;
+	border-radius: 3px;
+	transition: 0.3s;
+}
+.logout-btn:hover {
+	background:	#7b2cff;
+    transform: translateY(-2px);
+}
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+	align-items: center;
+    flex-wrap: wrap;
+	flex-direction: row;
+    gap: 12px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.nav-btn {
+    text-decoration: none;
+	background: rgba(255, 255, 255, 0.9);
+    color: #666;
+	padding: 12px 25px;
+    min-width: 110px;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+	transition: 0.3s;
+}
+.nav-btn i {
+    margin-right: 7px;
+}
+.nav-btn:hover {
+    background: white;
+    color: blue;
+	transform: translateY(-3px);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+@media (max-width: 600px) {
+.welcome-card {
+    padding: 30px 20px;
+}
+
+.welcome-card h1 {
+    font-size: 24px;
+}
+.navigation {
+    flex-direction: column;
+    align-items: right;
+}
+.nav-btn {
+    idth: 200px;
+    }
+}
+.shop-btn {
+	display: inline-block;
+	background: #176b3a;
+	color: white;
+	text-decoration: none;
+	paddding: 14px 30px;
+	border-radius:6px;
+	font-weight:bold;
+	margin-top: 15px;
+	transition: 0.3s;
+}
+.shop-btn:hover {
+	background: #176b3a;
+	transform: translateY(-2px);
+}
+	</style>
+</head>
+<body>
+
+<div class="container">
+<div class="welcome-card">
+<h1>Welcome to my Homepage!</h1>
+<p>
+Hello! My name is <strong>RJ</strong>,
+Welcome to my website
+</p>
+<a href="Product.html" class="shop-btn">
+	SHOP NOW!
+</a>
+<button class="logout-btn" onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+LOGOUT
+</button>
+</div>
+<div class="navigation">
+<a href="Homepage.html" class="nav-btn">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+<a href="Product.html" class="nav-btn">
+<i class="fa-solid fa-briefcase"></i>
+Product
+</a>
+<a href="Contact.html" class="nav-btn">
+<i class="fa-solid fa-envelope"></i>
+Contact
+<a href="About Us.html" class="nav-btn">
+<i class="fa-solid fa-circle-info"></i>
+About
+</a>
+</div>
+</div>
+<script>
+function logout() {
+alert("You have been logged out!");
+window.location.href = "log in form.html";
+}
+</script>
+</body>
+</html>

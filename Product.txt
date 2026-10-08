@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Construction Supplies</title>
+	  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: url(bom-dia-java.gif);
+            object-fit: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-box {
+            width: 80%;
+            background: white;
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: #f5f5f5;
+            padding: 15px;
+            text-align: left;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .inquire {
+            width: 100%;
+            padding: 10px;
+            background: #0b3d91;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navigation {
+            margin: 20px;
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .navigation a {
+            text-decoration: none;
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            justify-content: left;
+        }
+        .nav-btn {
+            text-decoration: none;
+
+            background: rgba(255, 255, 255, 0.9);
+            color: #666;
+
+            padding: 12px 25px;
+            min-width: 110px;
+
+            border-radius: 4px;
+
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .nav-btn i {
+            margin-right: 7px;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #163b7a;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 18px rgba(0, 0, 0, 0.18);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <a href="Home.html" class="nav-btn">
+        <i class="fa-solid fa-house"></i>
+        Back to Home
+        </a>
+        </div>
+<br>
+<center><div class="product-box">
+    <h1><p>Products</p></h1>
+    <p>Browse our available products.</p>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="short.webp" alt="tshirt">
+            <h3>Under Armour Short</h3>
+            <p>Comfortable, lightweight, and stylish for evereday wear.</p>
+            <p class="price"><p>&#8369 500</p></p>
+            <button class="inquire">Inquire Now</button>
+        </div>
+
+        <div class="card">
+            <img src="long sleeve.jpg" alt="long sleeve">
+            <h3>Under Armour Compression Long Sleeve T-Shirt</h3>
+            <p>Comfortable, fitted, and suitable for sports or workouts.</p>
+            <p class="price"><p>&#8369 600</p></p>
+            <button class="inquire">Inquire Now</button>
+        </div>
+
+        <div class="card">
+            <img src="bag.jpg" alt="bag">
+            <h3>Under Armour Backpack</h3>
+            <p>Durable, spacious, and perfect for carrying everyday essentials.</p>
+            <p class="price"><p>&#8369 1,500</p></p>
+            <button class="inquire">Inquire Now</button>
+        </div>
+
+    </div>
+</center>
+</div>
+</body>
+</html>

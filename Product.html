@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Badminton Products</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+	body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #dff6ff, #ffffff);
+}
+.navigation {
+	margin: 20px;
+}
+.nav-btn {
+	text-decoration: none;
+	background: white;
+	color: #333;
+	padding: 12px 25px;
+	border-radius: 6px;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.nav-btn:hover {
+	background: #0b3d91;
+	color: white;
+}
+.product-box {
+	width: 80%;
+	max-width: 1100px;
+	background: white;
+	margin: 30px auto;
+	padding: 30px;
+	border-radius: 12px;
+	text-align: center;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.product-box h1 {
+	color: #0b3d91;
+}
+.products {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-top: 25px;
+}
+.card {
+	background: #f7f9fc;
+	padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: 0.3s;
+ }
+.card:hover {
+	transform: translateY(-5px);
+}
+.card img {
+	width: 100%;
+	height: 230px;
+	object-fit: contain;
+	background: white;
+	border-radius: 8px;
+}
+.price {
+	font-size: 20px;
+	font-weight: bold;
+	color: #0b3d91;
+}
+.inquire {
+	width: 100%;
+	padding: 10px;
+	background: #0b3d91;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 15px;
+}
+.inquire:hover {
+	background: #06265c;
+}
+
+.inquiry-form {
+	display: none;
+	margin: 30px auto;
+	width: 80%;
+	max-width: 500px;
+	background: #f7f9fc;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+	text-align: left;
+}
+.inquiry-form h2 {
+	color: #0b3d91;
+	text-align: center;
+}
+.inquiry-form label {
+	display: block;
+	margin-top: 12px;
+	font-weight: bold;
+}
+.inquiry-form input,
+.inquiry-form textarea {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.send-btn {
+	width: 100%;
+	margin-top: 15px;
+	padding: 11px;
+	background: #0b3d91;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.send-btn:hover {
+	background: #06265c;
+}
+.close-btn {
+	width: 100%;
+	margin-top: 8px;
+	padding: 10px;
+	background: #777;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+@media (max-width: 800px) {
+.products {
+	grid-template-columns: 1fr;
+	}
+}
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+    <a href="Homepage.html" class="nav-btn">
+    <i class="fa-solid fa-house"></i>
+    Back to Home
+    </a>
+</div>
+<br>
+<center><div class="product-box">
+    <h1><p>Products</p></h1>
+    <p>Browse our available products.</p>
+
+    <div class="products">
+    <div class="card">
+    <img src="jorts.jpg" alt="Short">
+    <h3>Yonex Badminton Short</h3>
+    <p>Comfortable, lightweight, and stylish for evereday wear.</p>
+	<p class="price"><p>&#8369 500</p>
+	<button class="inquire">Inquire Now</button>
+</div>
+
+<div class="card">
+    <img src="shrt.jpg" alt="T shirt">
+    <h3>Yonex Jersey T-Shirt</h3>
+    <p>Comfortable, fitted, and suitable for sports or workouts.</p>
+    <p class="price"><p>&#8369 600</p>
+    <button class="inquire">Inquire Now</button>
+</div>
+
+<div class="card">
+<img src="pag.jpg" alt="Bag">
+	<h3>Yonex Badminton Backpack</h3>
+	<p>Durable, spacious, and perfect for carrying everyday essentials.</p>
+	<p class="price"><p>&#8369 3,000</p>
+	<button class="inquire">Inquire Now</button>
+</div>
+
+ <div class="card">
+<img src="shos.jpg" alt="Badminton Shoes">
+	<h3>Yonex Badminton Shoes</h3>
+	<p>Comfortable shoes with good grip.</p>
+	<p class="price"><p>&#8369 5,000</p>
+	<button class="inquire">Inquire Now</button>
+</button>
+</div>
+
+<div class="card">
+<img src="racket.jpg" alt="Badminton Racket">
+	<h3>Astrox Badminton Racket</h3>
+	<p>Lightweight racket for badminton.</p>
+	<p class="price"><p>&#8369 2,000</p>
+	<button class="inquire">Inquire Now</button>
+</button>
+</div>
+<div class="card">
+<img src="socks.jpg" alt="Badminton Socks">
+	<h3>Yonex Badminton Socks</h3>
+	<p>Comfortable socks for sports.</p>
+	<p class="price"><p>&#8369 300</p>
+	<button class="inquire">Inquire Now</button>
+</button>
+</div>
+</div>
+    </div>
+</center>
+</div>
+</body>
+</html>
