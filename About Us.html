@@ -1,251 +1,359 @@
+ 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us - Badminton Store</title>
 
-<title>About Us - Badminton</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-color: #f2f7ff;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f7ff;
+            color: #333;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        /* Navigation */
+        .navigation {
+            margin: 20px;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
+        .nav-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #666;
+            padding: 12px 25px;
+            min-width: 110px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            transition: 0.3s;
+        }
 
-.about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #0b3d91;
-    color: white;
-}
+        .nav-btn i {
+            margin-right: 7px;
+        }
 
-.about-section h1 {
-    font-size: 40px;
-}
+        .nav-btn:hover {
+            background: #0b3d91;
+            color: white;
+            transform: translateY(-3px);
+        }
 
-.about-section p {
-    font-size: 17px;
-}
+        .nav-btn.active {
+            background: #0b3d91;
+            color: white;
+        }
 
+        /* About Section */
+        .about-section {
+            padding: 50px 25px;
+            text-align: center;
+            background: linear-gradient(135deg, #0b3d91, #163b7a);
+            color: white;
+        }
 
-h2 {
-    text-align: center;
-}
+        .about-section h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
 
-.row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
+        .about-section p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
 
-.column {
-    width: 30%;
-}
-.card {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: 0.3s;
-}
+        /* Team Section */
+        .team-heading {
+            text-align: center;
+            margin: 35px 10px 10px;
+            color: #0b3d91;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-}
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 25px;
+        }
 
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
+        .column {
+            width: 30%;
+            min-width: 250px;
+            max-width: 350px;
+        }
 
-.container {
-    padding: 16px;
-    text-align: center;
-}
+        .card {
+            height: 100%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
 
-.container h2 {
-    color: #0b3d91;
-}
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-.title {
-    color: #777;
-    font-weight: bold;
-}
+        .card img {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
 
+        .container {
+            padding: 20px 16px;
+            text-align: center;
+        }
 
-.button {
-    border: none;
-    padding: 10px;
-    color: white;
-    background-color: #0b3d91;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px;
-}
+        .container h2 {
+            color: #0b3d91;
+            margin-bottom: 10px;
+        }
 
-.button:hover {
-    background-color: #06265c;
-}
+        .container p {
+            line-height: 1.5;
+            margin: 10px 0;
+            overflow-wrap: anywhere;
+        }
 
-@media screen and (max-width: 650px) {
-    .row {
-        display: block;
-    }
-.column {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-.about-section {
-        padding: 30px;
-    }
-}
-.navigation {
-	margin: 20px;
-	display: flex;
-	justify-content: left;
-	flex-wrap: wrap;
-	gap: 12px;
-}
-.nav-btn {
-	text-decoration: none;
-	background: rgba(255, 255, 255, 0.9);
-	color: #666;
-	padding: 12px 25px;
-	min-width: 110px;
-	border-radius: 4px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-	transition: 0.3s;
-}
-.nav-btn i {
-	margin-right: 7px;
-}
-.nav-btn:hover {
-	background: white;
-	color: #163b7a;
-	transform: translateY(-3px);
-	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-}
+        .title {
+            color: #777;
+            font-weight: bold;
+        }
 
-</style>
+        /* Contact Button */
+        .button {
+            border: none;
+            padding: 12px;
+            color: white;
+            background-color: #0b3d91;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
 
+        .button:hover {
+            background-color: #06265c;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .navigation {
+                justify-content: center;
+                margin: 15px;
+            }
+
+            .nav-btn {
+                flex: 1 1 40%;
+                min-width: 120px;
+            }
+
+            .about-section {
+                padding: 35px 20px;
+            }
+
+            .about-section h1 {
+                font-size: 32px;
+            }
+
+            .column {
+                width: 45%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .navigation {
+                gap: 8px;
+            }
+
+            .nav-btn {
+                padding: 12px 10px;
+                font-size: 14px;
+            }
+
+            .about-section h1 {
+                font-size: 28px;
+            }
+
+            .about-section p {
+                font-size: 15px;
+            }
+
+            .row {
+                padding: 20px;
+            }
+
+            .column {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="navigation">
-<a href="index.html" class="nav-btn">
-<i class="fa-solid fa-house"></i>
-Back to Home
-</a>
-</div>
+    <!-- Navigation -->
+    <div class="navigation">
+        <a href="index.html" class="nav-btn">
+            <i class="fa-solid fa-house"></i> Home
+        </a>
 
-<!-- About Us -->
-<div class="about-section">
+        <a href="product.html" class="nav-btn">
+            <i class="fa-solid fa-table-tennis-paddle-ball"></i> Product
+        </a>
 
-    <h1> About Us??</h1>
+        <a href="contact.html" class="nav-btn">
+            <i class="fa-solid fa-envelope"></i> Contact
+        </a>
 
-    <p>
-        Welcome to our Badminton Store!
-    </p>
-
-    <p>
-        We provide quality badminton products for beginners,
-        students, and badminton players.
-    </p>
-
-    <p>
-        Our goal is to help players enjoy the game with
-        comfortable, reliable, and affordable equipment.
-    </p>
-
-</div>
-
-
-<h2>Our Badminton Team</h2>
-
-<div class="row">
-    <!-- Member 1 -->
-    <div class="column">
-<div class="card">
-<img src="lee.jpg" alt="Badminton Player">
-<div class="container">
-<h2>Lee</h2>
-<p class="title">
-Badminton Player
-</p>
-<p>
-Passionate about badminton and
-improving skills through training.
-</p>
-<p>
-Player@sample.com
-</p>
-<button class="button"
-onclick="contact('RJ')">
-Contact
-</button>
-</div>
-</div>
+        <a href="about.html" class="nav-btn active">
+            <i class="fa-solid fa-circle-info"></i> About
+        </a>
     </div>
-    <!-- Member 2 -->
-    <div class="column">
-<div class="card">
-<img src="tau.jpg" alt="Badminton Player">
-<div class="container">
-<h2>Taufik</h2>
-<p class="title">
-Badminton Coach
-</p>
-<p>
-Helps players improve their
-techniques and badminton skills.
-</p>
-<p>
-coach@sample.com
-</p>
-<button class="button"
-onclick="contact('Patrick')">
-Contact
-</button>
-</div>
-</div>
-    </div>
-    <!-- Member 3 -->
-<div class="column">
-<div class="card">
-<img src="saa.jpg" alt="Badminton Player">
-<div class="container">
-<h2>APMCIANS</h2>
-<p class="title">
-Badminton Team Member
-</p>
-<p>
-Enjoys playing badminton and
-supporting the badminton community.
-</p>
-<p>
-Team@sample.com
-</p>
-<button class="button"
-onclick="contact('John')">
-Contact
-</button>
-</div>
-</div>
-    </div>
-</div>
 
+    <!-- About Us -->
+    <div class="about-section">
+        <h1>About Us</h1>
 
+        <p>Welcome to our Badminton Store!</p>
+
+        <p>
+            We provide quality badminton products for beginners,
+            students, and badminton players.
+        </p>
+
+        <p>
+            Our goal is to help players enjoy the game with
+            comfortable, reliable, and affordable equipment.
+        </p>
+    </div>
+
+    <!-- Badminton Team -->
+    <h2 class="team-heading">Our Badminton Team</h2>
+
+    <div class="row">
+
+        <!-- Member 1 -->
+        <div class="column">
+            <div class="card">
+                <img src="lee.jpg" alt="Lee - Badminton Player">
+
+                <div class="container">
+                    <h2>Lee</h2>
+
+                    <p class="title">Badminton Player</p>
+
+                    <p>
+                        Passionate about badminton and improving
+                        skills through training.
+                    </p>
+
+                    <p>Player@sample.com</p>
+
+                    <button class="button"
+                    onclick="contact('Player@sample.com')">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="column">
+            <div class="card">
+                <img src="tau.jpg" alt="Taufik - Badminton Coach">
+
+                <div class="container">
+                    <h2>Taufik</h2>
+
+                    <p class="title">Badminton Coach</p>
+
+                    <p>
+                        Helps players improve their techniques
+                        and badminton skills.
+                    </p>
+
+                    <p>coach@sample.com</p>
+
+                    <button class="button"
+                    onclick="contact('coach@sample.com')">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="column">
+            <div class="card">
+                <img src="saa.jpg" alt="APMCIANS - Badminton Team">
+
+                <div class="container">
+                    <h2>APMCIANS</h2>
+
+                    <p class="title">Badminton Team Member</p>
+
+                    <p>
+                        Enjoys playing badminton and supporting
+                        the badminton community.
+                    </p>
+
+                    <p>Team@sample.com</p>
+
+                    <button class="button"
+                    onclick="contact('Team@sample.com')">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Badminton Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function contact(email) {
+            window.location.href = "mailto:" + email;
+        }
+    </script>
 
 </body>
 </html>
