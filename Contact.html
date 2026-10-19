@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,39 +20,34 @@
             padding: 0;
             min-height: 100vh;
             font-family: Arial, sans-serif;
-
             background: linear-gradient(45deg, blue, #ff4fc3);
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
-
             color: white;
         }
 
-        h1 {
-            color: white;
-            text-align: center;
-            margin: 20px 10px;
-            font-size: clamp(28px, 5vw, 45px);
-        }
-
-        /* Navigation */
+        /* NAVIGATION */
         .navigation {
             width: 100%;
             padding: 20px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .nav-btn {
+            display: inline-block;
             text-decoration: none;
             background: rgba(255, 255, 255, 0.95);
-            color: #666;
+            color: #333;
             padding: 12px 20px;
             border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
             transition: 0.3s;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .nav-btn i {
@@ -59,23 +55,29 @@
         }
 
         .nav-btn:hover {
-            background: white;
-            color: #163b7a;
+            background: #0b3d91;
+            color: white;
             transform: translateY(-3px);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
         }
 
-        /* Contact Form Container */
+        /* PAGE TITLE */
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 20px 10px;
+            font-size: clamp(28px, 5vw, 45px);
+        }
+
+        /* CONTACT FORM CONTAINER */
         .container {
             width: 90%;
             max-width: 750px;
             margin: 20px auto 50px;
             padding: 30px;
             border-radius: 25px;
-
             background: rgba(255, 255, 255, 0.12);
             border: 2px solid rgba(255, 255, 255, 0.7);
-
             backdrop-filter: blur(8px);
         }
 
@@ -97,11 +99,8 @@
             width: 100%;
             padding: 13px;
             margin: 0 auto 18px;
-
             border: 1px solid #ccc;
             border-radius: 6px;
-            box-sizing: border-box;
-
             font-size: 16px;
             font-family: Arial, sans-serif;
         }
@@ -118,23 +117,19 @@
             resize: vertical;
         }
 
-        /* Submit Button */
+        /* SUBMIT BUTTON */
         input[type="submit"] {
             display: block;
             width: 160px;
             max-width: 100%;
-
             background-color: #04AA6D;
             color: white;
-
             padding: 13px 20px;
             border: none;
             border-radius: 6px;
-
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
-
             margin: 5px auto 0;
         }
 
@@ -142,7 +137,7 @@
             background-color: #45a049;
         }
 
-        /* Tablet */
+        /* TABLET */
         @media (max-width: 768px) {
             .container {
                 width: 92%;
@@ -154,16 +149,17 @@
             }
         }
 
-        /* Mobile Phone */
+        /* MOBILE PHONE */
         @media (max-width: 480px) {
             .navigation {
+                justify-content: center;
                 padding: 12px;
+                gap: 8px;
             }
 
             .nav-btn {
-                width: 100%;
-                text-align: center;
-                padding: 11px;
+                padding: 10px 12px;
+                font-size: 13px;
             }
 
             h1 {
@@ -202,18 +198,34 @@
 
 <body>
 
+    <!-- NAVIGATION BUTTONS -->
     <div class="navigation">
+
         <a href="index.html" class="nav-btn">
-            <i class="fa-solid fa-house"></i>
-            Back to Home
+            <i class="fa-solid fa-house"></i> Home
         </a>
+
+        <a href="product.html" class="nav-btn">
+            <i class="fa-solid fa-table-tennis-paddle-ball"></i> Product
+        </a>
+
+        <a href="contact.html" class="nav-btn">
+            <i class="fa-solid fa-envelope"></i> Contact
+        </a>
+
+        <a href="about.html" class="nav-btn">
+            <i class="fa-solid fa-circle-info"></i> About
+        </a>
+
     </div>
 
+    <!-- CONTACT TITLE -->
     <h1>Contact Us!</h1>
 
+    <!-- CONTACT FORM -->
     <div class="container">
 
-        <form action="action_page.php">
+        <form action="action_page.php" method="get">
 
             <label for="fname">First Name</label>
             <input
@@ -221,6 +233,7 @@
                 id="fname"
                 name="firstname"
                 placeholder="Your Name"
+                required
             >
 
             <label for="lname">Last Name</label>
@@ -229,6 +242,7 @@
                 id="lname"
                 name="lastname"
                 placeholder="Your Last Name"
+                required
             >
 
             <label for="country">Country</label>
@@ -243,6 +257,7 @@
                 id="subject"
                 name="subject"
                 placeholder="Write something..."
+                required
             ></textarea>
 
             <input type="submit" value="Submit">
