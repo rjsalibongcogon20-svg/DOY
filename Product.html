@@ -1,5 +1,6 @@
- <!DOCTYPE html>
-<html>
+ 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,13 @@
             background: linear-gradient(135deg, #dff6ff, #ffffff);
         }
 
+        /* NAVIGATION */
         .navigation {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
             margin: 20px;
         }
 
@@ -30,16 +37,23 @@
             text-decoration: none;
             background: white;
             color: #333;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border-radius: 6px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .nav-btn i {
+            margin-right: 7px;
         }
 
         .nav-btn:hover {
             background: #0b3d91;
             color: white;
+            transform: translateY(-3px);
         }
 
+        /* PRODUCT CONTAINER */
         .product-box {
             width: 90%;
             max-width: 1200px;
@@ -55,6 +69,7 @@
             color: #0b3d91;
         }
 
+        /* PRODUCT GRID */
         .products {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -97,6 +112,7 @@
             color: #0b3d91;
         }
 
+        /* INQUIRE BUTTON */
         .inquire {
             width: 100%;
             padding: 10px;
@@ -112,6 +128,7 @@
             background: #06265c;
         }
 
+        /* INQUIRY FORM */
         .inquiry-form {
             display: none;
             margin: 30px auto;
@@ -144,7 +161,8 @@
             border-radius: 5px;
         }
 
-        .send-btn, .close-btn {
+        .send-btn,
+        .close-btn {
             width: 100%;
             margin-top: 12px;
             padding: 11px;
@@ -162,6 +180,7 @@
             background: #777;
         }
 
+        /* TABLET */
         @media (max-width: 800px) {
             .products {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -173,7 +192,19 @@
             }
         }
 
+        /* MOBILE */
         @media (max-width: 480px) {
+            .navigation {
+                justify-content: center;
+                margin: 12px;
+                gap: 8px;
+            }
+
+            .nav-btn {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
             .products {
                 grid-template-columns: 1fr;
             }
@@ -181,16 +212,38 @@
             .card img {
                 height: 220px;
             }
+
+            .product-box {
+                width: 94%;
+                padding: 15px;
+            }
+
+            .inquiry-form {
+                width: 100%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVIGATION BUTTONS -->
     <div class="navigation">
         <a href="index.html" class="nav-btn">
-            <i class="fa-solid fa-house"></i>
-            Back to Home
+            <i class="fa-solid fa-house"></i> Home
+        </a>
+
+        <a href="product.html" class="nav-btn">
+            <i class="fa-solid fa-table-tennis-paddle-ball"></i> Product
+        </a>
+
+        <a href="contact.html" class="nav-btn">
+            <i class="fa-solid fa-envelope"></i> Contact
+        </a>
+
+        <a href="about.html" class="nav-btn">
+            <i class="fa-solid fa-circle-info"></i> About
         </a>
     </div>
 
@@ -350,7 +403,6 @@
                 <button type="button" class="close-btn" onclick="closeInquiry()">Close</button>
             </form>
         </div>
-
     </div>
 
     <script>
