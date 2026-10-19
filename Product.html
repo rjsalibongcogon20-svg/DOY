@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +10,28 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+        /* GENERAL SETTINGS */
         * {
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            width: 100%;
             min-height: 100vh;
+            font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #dff6ff, #ffffff);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
         }
 
         /* NAVIGATION */
@@ -29,11 +41,14 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 12px;
-            margin: 20px;
+            width: calc(100% - 40px);
+            margin: 20px auto;
         }
 
         .nav-btn {
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             text-decoration: none;
             background: white;
             color: #333;
@@ -55,7 +70,7 @@
 
         /* PRODUCT CONTAINER */
         .product-box {
-            width: 90%;
+            width: calc(100% - 40px);
             max-width: 1200px;
             background: white;
             margin: 30px auto;
@@ -67,6 +82,12 @@
 
         .product-box h1 {
             color: #0b3d91;
+            font-size: clamp(24px, 3vw, 36px);
+            overflow-wrap: anywhere;
+        }
+
+        .product-box > p {
+            line-height: 1.6;
         }
 
         /* PRODUCT GRID */
@@ -78,6 +99,7 @@
         }
 
         .card {
+            min-width: 0;
             background: #f7f9fc;
             padding: 15px;
             border-radius: 10px;
@@ -90,6 +112,7 @@
         }
 
         .card img {
+            display: block;
             width: 100%;
             height: 200px;
             object-fit: contain;
@@ -100,10 +123,12 @@
         .card h3 {
             color: #222;
             font-size: 18px;
+            overflow-wrap: anywhere;
         }
 
         .card p {
             line-height: 1.5;
+            overflow-wrap: anywhere;
         }
 
         .price {
@@ -115,6 +140,7 @@
         /* INQUIRE BUTTON */
         .inquire {
             width: 100%;
+            min-height: 44px;
             padding: 10px;
             background: #0b3d91;
             color: white;
@@ -132,13 +158,14 @@
         .inquiry-form {
             display: none;
             margin: 30px auto;
-            width: 90%;
+            width: 100%;
             max-width: 500px;
             background: #f7f9fc;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             text-align: left;
+            scroll-margin-top: 20px;
         }
 
         .inquiry-form h2 {
@@ -154,73 +181,153 @@
 
         .inquiry-form input,
         .inquiry-form textarea {
+            display: block;
             width: 100%;
-            padding: 10px;
+            max-width: 100%;
+            padding: 12px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .inquiry-form textarea {
+            resize: vertical;
         }
 
         .send-btn,
         .close-btn {
             width: 100%;
+            min-height: 44px;
             margin-top: 12px;
             padding: 11px;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 15px;
         }
 
         .send-btn {
             background: #0b3d91;
         }
 
+        .send-btn:hover {
+            background: #06265c;
+        }
+
         .close-btn {
             background: #777;
         }
 
-        /* TABLET */
-        @media (max-width: 800px) {
+        .close-btn:hover {
+            background: #555;
+        }
+
+        /* TABLET AND SMALL COMPUTER */
+        @media (max-width: 900px) {
             .products {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
             }
 
             .product-box {
-                width: 94%;
-                padding: 15px;
+                width: calc(100% - 30px);
+                padding: 20px;
             }
         }
 
-        /* MOBILE */
-        @media (max-width: 480px) {
+        /* CELLPHONE */
+        @media (max-width: 600px) {
             .navigation {
+                width: calc(100% - 24px);
+                margin: 12px auto;
                 justify-content: center;
-                margin: 12px;
                 gap: 8px;
             }
 
             .nav-btn {
-                padding: 10px 12px;
-                font-size: 13px;
+                flex: 1 1 calc(50% - 8px);
+                min-width: 0;
+                padding: 12px 6px;
+                font-size: 14px;
             }
 
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            .card img {
-                height: 220px;
+            .nav-btn i {
+                margin-right: 5px;
             }
 
             .product-box {
-                width: 94%;
-                padding: 15px;
+                width: calc(100% - 20px);
+                margin: 15px auto;
+                padding: 15px 12px;
+                border-radius: 10px;
+            }
+
+            .product-box h1 {
+                font-size: 25px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .card {
+                padding: 10px;
+            }
+
+            .card img {
+                height: 140px;
+            }
+
+            .card h3 {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+
+            .card p {
+                font-size: 13px;
+            }
+
+            .price {
+                font-size: 17px;
+            }
+
+            .inquire {
+                padding: 10px 5px;
+                font-size: 13px;
             }
 
             .inquiry-form {
                 width: 100%;
                 padding: 15px;
+                margin: 20px auto;
+            }
+        }
+
+        /* VERY SMALL CELLPHONES */
+        @media (max-width: 360px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .card img {
+                height: 200px;
+            }
+
+            .card h3 {
+                font-size: 17px;
+            }
+
+            .card p {
+                font-size: 14px;
+            }
+
+            .nav-btn {
+                font-size: 12px;
             }
         }
     </style>
@@ -230,6 +337,7 @@
 
     <!-- NAVIGATION BUTTONS -->
     <div class="navigation">
+
         <a href="index.html" class="nav-btn">
             <i class="fa-solid fa-house"></i> Home
         </a>
@@ -245,9 +353,12 @@
         <a href="About Us.html" class="nav-btn">
             <i class="fa-solid fa-circle-info"></i> About
         </a>
+
     </div>
 
+    <!-- PRODUCT SECTION -->
     <div class="product-box">
+
         <h1>Badminton Products</h1>
         <p>Browse our available badminton products.</p>
 
@@ -345,7 +456,7 @@
 
             <!-- PRODUCT 11 -->
             <div class="card">
-                <img src="bag.jpg" alt="Racket Bag">
+                <img src="bag.jpg" alt="Badminton Racket Bag">
                 <h3>Badminton Racket Bag</h3>
                 <p>Protects and organizes your rackets and accessories.</p>
                 <p class="price">₱1,500</p>
@@ -383,9 +494,11 @@
 
         <!-- INQUIRY FORM -->
         <div class="inquiry-form" id="inquiryForm">
+
             <h2>Product Inquiry</h2>
 
             <form onsubmit="sendInquiry(event)">
+
                 <label for="product">Selected Product</label>
                 <input type="text" id="product" name="product" readonly>
 
@@ -400,11 +513,15 @@
                     placeholder="Write your question here..." required></textarea>
 
                 <button type="submit" class="send-btn">Send Inquiry</button>
+
                 <button type="button" class="close-btn" onclick="closeInquiry()">Close</button>
+
             </form>
         </div>
+
     </div>
 
+    <!-- JAVASCRIPT -->
     <script>
         function inquire(productName) {
             document.getElementById("product").value = productName;
