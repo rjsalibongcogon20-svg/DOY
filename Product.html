@@ -80,6 +80,33 @@
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
         }
 
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            body {
+                min-height: 100vh;
+                padding: 150px 15px 30px;
+            }
+
+            /* Navigation */
+            .navigation {
+                top: 65px;
+                left: 15px;
+                right: 15px;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .nav-btn {
+                width: 100%;
+                min-width: 0;
+
+                padding: 10px 8px;
+                font-size: 13px;
+            }
+
         .product-box {
             width: 90%;
             max-width: 1200px;
